@@ -3,6 +3,7 @@
 		<?php
 			$menu = Array(
 				'mesa' => Array(
+					'id'	  => 1,
 					'title'   => 'Mesa',
 					'url'	  => 'catalogo/categoria/1',
 					'submenu' => Array (
@@ -19,6 +20,7 @@
 					)
 				),
 				'cozinha' => Array(
+					'id'	  => 2,
 					'title'   => 'Cozinha',
 					'url'	  => 'catalogo/categoria/2',
 					'submenu' => Array (
@@ -37,6 +39,7 @@
 					)
 				),
 				'bar' => Array(
+					'id'	  => 3,
 					'title'   => 'Bar',
 					'url'	  => 'catalogo/categoria/3',
 					'submenu' => Array (
@@ -55,6 +58,7 @@
 					)
 				),
 				'cheecafe<' => Array(
+					'id'	  => 4,
 					'title'   => 'Chá & Café',
 					'url'	  => 'catalogo/categoria/4',
 					'submenu' => Array (
@@ -73,6 +77,7 @@
 					)
 				),
 				'faqueiros' => Array(
+					'id'	  => 5,
 					'title'   => 'Faqueiros & Ta.',
 					'url'	  => 'catalogo/categoria/5',
 					'submenu' => Array (
@@ -91,6 +96,7 @@
 					)
 				),
 				'decoracao' => Array(
+					'id'	  => 6,
 					'title'   => 'Decoração',
 					'url'	  => 'catalogo/categoria/6',
 					'submenu' => Array(
@@ -109,6 +115,7 @@
 					)
 				),
 				'escritorio' => Array(
+					'id'	  => 7,
 					'title'   => 'Escritório',
 					'url'	  => 'catalogo/categoria/7',
 					'submenu' => Array(
@@ -127,6 +134,7 @@
 					)
 				),
 				'lavanderia' => Array(
+					'id'	  => 8,
 					'title'   => 'Lavanderia',
 					'url'	  => 'catalogo/categoria/8',
 					'submenu' => Array(
@@ -145,6 +153,7 @@
 					)
 				),
 				'limpeza' => Array(
+					'id'	  => 9,
 					'title'   => 'Limpeza',
 					'url'	  => 'catalogo/categoria/9',
 					'submenu' => Array(
@@ -163,6 +172,7 @@
 					)
 				),
 				'beleza' => Array(
+					'id'	  => 10,
 					'title'   => 'Beleza',
 					'url'	  => 'catalogo/categoria/10',
 					'submenu' => Array(
