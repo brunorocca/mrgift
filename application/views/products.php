@@ -50,14 +50,16 @@
 					
 						<div class="product-wrapper">
 							<div class="product-image">
-								<a href="product.php"><img src="<?php echo $siteUrl;?>/images/<?php echo $item->imagem_produto;?>" alt="Produto" /></a>
+								<a href="<?php echo $siteUrlBase;?>/catalogo/detalhe/<?php echo $item->id_produto;?>">
+									<img src="<?php echo $siteUrl;?>/images/<?php echo $item->imagem_produto;?>" alt="Produto" />
+								</a>
 							</div>
 							<dl class="product-data">
 								<dt><?php echo $item->cod_produto; ?></dt>
 								<dd><?php echo $item->desc_produto; ?></dd>
 							</dl>
 							<div class="product-actions">
-								<a href="<?php echo $siteUrl;?>/product.php" class="default-button">+ detalhes</a>
+								<a href="<?php echo $siteUrlBase;?>/catalogo/detalhe/<?php echo $item->id_produto;?>" class="default-button">+ detalhes</a>
 								<a href="<?php echo $siteUrl;?>/product.php" class="default-button">FazerPedido</a>
 							</div>
 						</div>

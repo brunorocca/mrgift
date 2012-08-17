@@ -20,9 +20,9 @@ class Catalogo extends CI_Controller {
 		$this->load->model('Produto_model');
 		$data['query'] = $this->Produto_model->get_by_sub_type($tipoSubProduto);
 	
-		print_r($data);
+		$data['produtos'] = $return['query'];
 	
-		$this->load->view('products');
+		$this->load->view('products', $data);
 	
 	
 	}
@@ -30,13 +30,11 @@ class Catalogo extends CI_Controller {
 	public function detalhe($idProduto)
 	{
 		$this->load->model('Produto_model');
-		$produto = $this->Produto_model->get_by_id($idProduto);
+		$return['query'] = $this->Produto_model->get_by_id($idProduto);
 
-		$sugestoes = $this->Produto_model->get_sugesions($produto['id_tipo_produto']);
-
-		echo $produto;
-
-		$this->load->view('product');
+		$data['item'] = $return['query'][0];
+		
+		$this->load->view('product', $data);
 
 
 	}

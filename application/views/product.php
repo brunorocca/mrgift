@@ -20,7 +20,7 @@
 
 			<div id="product-image-wrapper">
 				<div id="product-image">
-					<img src="<?php echo $siteUrl;?>/img/products/3.png" alt="2006 Fifa World Cup" />
+					<img src="<?php echo $siteUrl;?>/images/<?php echo $item->imagem_produto;?>" alt="<?php echo $item->cod_produto; ?>" />
 				</div>
 				<span class="default-button">Clique na imagem para ampliar</span>
 			</div>
@@ -28,18 +28,15 @@
 			<div id="product-data">
 
 				<div id="product-title">
-					<h1>2006 Fifa World Cup</h1>
-					<h2>Cod. do produto: 1111432007</h2>
+					<h1><NOME DO PRODUTO></h1>
+					<h2><?php echo $item->cod_produto; ?></h2>
 				</div>
 
 				<div id="product-description-wrapper">
 					<div id="product-description">
 						<h3>Descrição do produto</h3>
 						<p>
-							Para relembrar o penta brasileiro, o site oficial da Fifa para a Copa do Mundo de 2002 segue o esquema da página da entidade,
-							com notícias da competição e informações de cada seleção que disputou o Mundial em 2002.
-							Há a tabela completa do campeonato, uma galeria de fotos, informações das cidades sedes dos jogos,
-							uma seção de entretenimento e arquivos históricos do Mundiais. Em inglês, espanhol, francês, alemão, coreano e japonês.
+							<?php echo $item->desc_produto; ?>
 						</p>
 					</div>
 				</div>
