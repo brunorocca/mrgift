@@ -1,61 +1,194 @@
 <div id="main-nav">
 	<ul class="h-menu wrapper">
-
 		<?php
-
 			$menu = Array(
-
 				'mesa' => Array(
 					'title'   => 'Mesa',
-					'submenu' => Array('Pratos', 'Refratarios', 'Linha Infantil', 'Bandejas', 'Queijo',)
+					'url'	  => '',
+					'submenu' => Array (
+						Array('title'=>'Pratos', 
+							'url'=>''),
+						Array('title'=>'Refratarios', 
+							'url'=>''), 
+						Array('title'=>'Linha Infantil', 
+							'url'=>''),
+						Array('title'=>'Bandejas', 
+							'url'=>''),
+						Array('title'=>'Queijo', 
+							'url'=>'')
+					)
 				),
 				'cozinha' => Array(
 					'title'   => 'Cozinha',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array (
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 				'bar' => Array(
 					'title'   => 'Bar',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',	
+					'submenu' => Array (
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 				'cheecafe<' => Array(
 					'title'   => 'Chá & Café',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array (
+						Array('title'=>'Sub item A', 
+							'url'=>''),
+						Array('title'=>'Sub item B', 
+							'url'=>''),
+						Array('title'=>'Sub item C', 
+							'url'=>''),
+						Array('title'=>'Sub item D', 
+							'url'=>''),
+						Array('title'=>'Sub item E', 
+							'url'=>''),
+						Array('title'=>'Sub item F')
+					)
 				),
 				'faqueiros' => Array(
 					'title'   => 'Faqueiros & Ta.',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array (
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 				'decoracao' => Array(
 					'title'   => 'Decoração',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array(
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 				'escritorio' => Array(
 					'title'   => 'Escritório',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array(
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 				'lavanderia' => Array(
 					'title'   => 'Lavanderia',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array(
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 				'limpeza' => Array(
 					'title'   => 'Limpeza',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array(
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 				'beleza' => Array(
 					'title'   => 'Beleza',
-					'submenu' => Array('Sub item A', 'Sub item B', 'Sub item C', 'Sub item D', 'Sub item E', 'Sub item F')
+					'url'	  => '',
+					'submenu' => Array(
+						Array('title'=>'Sub item A', 
+							'url'=>''), 
+						Array('title'=>'Sub item B', 
+							'url'=>''), 
+						Array('title'=>'Sub item C', 
+							'url'=>''), 
+						Array('title'=>'Sub item D', 
+							'url'=>''), 
+						Array('title'=>'Sub item E', 
+							'url'=>''), 
+						Array('title'=>'Sub item F', 
+							'url'=>'')
+					)
 				),
 			);
-
 		?>
 		<?php foreach($menu as $key => $value) { ?>
 			<li class="main-menu-item" id="main-menu-item-<?php echo $key; ?>">
 				<dl>
-					<dt><a class="main-menu-item-title" href="<?php echo $siteUrl;?>/products.php"><?php echo $value['title']; ?></a></dt>
+					<dt><a class="main-menu-item-title" href="<?php echo $siteUrl.$value['url'];?>"><?php echo $value['title']; ?></a></dt>
 					<dd>
 						<ul>
-							<?php foreach($value['submenu'] as $key2 => $value2) { ?>
-								<li><a href="<?php echo $siteUrlBase;?>catalogo/listar/1"><?php echo $value2; ?></a></li>
+							<?php foreach($value['submenu'] as $subitem) { ?>
+								<li><a href="<?php echo $siteUrlBase.$subitem['url'];?>"><?php echo $subitem["title"]; ?></a></li>
 							<?php } ?>
 						</ul>
 					</dd>
