@@ -3,7 +3,7 @@
 	error_reporting(E_ALL);
 	
 	// Url de Prefixo
-	$sitePrefixo = "http://localhost/mrgift";
+	$sitePrefixo = "http://localhost/~brunocostarocca/mrgift";
 
 	// URL para CSS, JS, etc
 	$siteUrl = $sitePrefixo."/application";

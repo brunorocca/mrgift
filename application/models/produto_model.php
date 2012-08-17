@@ -2,7 +2,7 @@
 class Produto_model extends CI_Model {
 	
 	var $id_produto = '';
-	var $id_tipo_produto = '';
+	var $id_sub_tipo_produto = '';
 	var $cod_produto = '';
 	var $desc_produto = '';
 	var $imagem_produto = '';
@@ -20,7 +20,7 @@ class Produto_model extends CI_Model {
 	
 	function insert($id_tipo, $codigo, $desc, $imagem) 
 	{
-		$this->id_tipo_produto = $id_tipo;
+		$this->id_sub_tipo_produto = $id_tipo;
 		$this->cod_produto = $codigo;
 		$this->desc_produto = $desc;
 		$this->imagem_produto = $imagem;
@@ -32,7 +32,7 @@ class Produto_model extends CI_Model {
 	function get_by_type($id_tipo_produto) 
 	{
 		$query = $this->db->get_where('PRODUTOS', 
-				array('id_tipo_produto' => $id_tipo_produto));
+				array('id_sub_tipo_produto' => $id_tipo_produto));
 		
 		return $query->result();
 	}
@@ -40,7 +40,7 @@ class Produto_model extends CI_Model {
 	function get_sugesions($id_tipo_produto)
 	{
 		$query = $this->db->get_where('PRODUTOS',
-				array('id_tipo_produto' => $id_tipo_produto));
+				array('id_sub_tipo_produto' => $id_tipo_produto));
 	
 		// TODO RANDON 4 PRODUTOS
 		
