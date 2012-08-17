@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'Minion';
+	src: url('../fonts/MinionPro-Regular.otf');
+}
+
+@font-face {
+	font-family: 'Minion';
+	src: url('../fonts/MinionPro-Bold.otf');
+	font-weight:bold;
+}
+/*
+@font-face {
+	font-family: 'minion';
+	src: url('../fonts/MinionPro-Semibold.otf');
+	font-weight:bold;
+}
+*/
