@@ -31,7 +31,7 @@ class Salvarprodutos extends CI_Controller {
 				$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
 	
 				// Caminho de onde ficar‡ a imagem
-				$caminho_imagem = "/Users/brunocostarocca/Sites/application/images/" . $nome_imagem;
+				$caminho_imagem = "/Users/brunocostarocca/Sites/mrgift/application/images/" . $nome_imagem;
 	
 				// Faz o upload da imagem para seu respectivo caminho
 				move_uploaded_file($foto["tmp_name"], $caminho_imagem);
