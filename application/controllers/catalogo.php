@@ -8,7 +8,7 @@ class Catalogo extends CI_Controller {
 		$this->load->model('Produto_model');
 		$data['query'] = $this->Produto_model->get_by_type($tipoProduto);
 
-		echo 'categoria';
+		print_r($data);
 
 		$this->load->view('products');
 
@@ -20,7 +20,7 @@ class Catalogo extends CI_Controller {
 		$this->load->model('Produto_model');
 		$data['query'] = $this->Produto_model->get_by_type($tipoSubProduto);
 	
-		echo 'subcategoria';
+		print_r($data);
 	
 		$this->load->view('products');
 	
@@ -46,7 +46,7 @@ class Catalogo extends CI_Controller {
 		$this->load->model('Produto_model');
 		$data['query'] = $this->Produto_model->get_entries(10);
 		
-		echo $data; 
+		print_r($data); 
 		
 		$this->load->view('viewsalvarprodutos');
 	}
