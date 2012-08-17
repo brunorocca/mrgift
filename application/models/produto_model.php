@@ -46,7 +46,7 @@ class Produto_model extends CI_Model {
 	function get_by_sub_type($id_sub_tipo_produto)
 	{
 		$query = $this->db->get_where('PRODUTOS',
-				array('id_sub_tipo_produto' => $id_tipo_produto));
+				array('id_sub_tipo_produto' => $id_sub_tipo_produto));
 	
 		return $query->result();
 	}

@@ -6,11 +6,11 @@ class Catalogo extends CI_Controller {
 	{
 
 		$this->load->model('Produto_model');
-		$data['query'] = $this->Produto_model->get_by_type($tipoProduto);
+		$return['query'] = $this->Produto_model->get_by_type($tipoProduto);
 
-		print_r($data);
-
-		$this->load->view('products');
+		$data['produtos'] = $return['query'];
+		
+		$this->load->view('products', $data);
 
 
 	}
@@ -18,9 +18,9 @@ class Catalogo extends CI_Controller {
 	public function subcategoria($tipoSubProduto)
 	{
 		$this->load->model('Produto_model');
-		$data['query'] = $this->Produto_model->get_by_type($tipoSubProduto);
+		$data['query'] = $this->Produto_model->get_by_sub_type($tipoSubProduto);
 	
-		echo $data['query'];
+		print_r($data);
 	
 		$this->load->view('products');
 	
@@ -85,7 +85,7 @@ class Catalogo extends CI_Controller {
 	
 				// Insere os dados no banco
 				$this->load->model('Produto_model');
-				$data['query'] = $this->Produto_model->insert('2', $nome, $nome, $nome_imagem);
+				$data['query'] = $this->Produto_model->insert('1', $nome, $nome, $nome_imagem);
 	
 				echo "OK";
 					

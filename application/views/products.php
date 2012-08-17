@@ -44,23 +44,24 @@
 			</div>
 
 			<div id="products-list">
-
-				<?php for ($z=0;$z<5;$z++) { ?>
-					<?php for ($i=1;$i<5;$i++) { ?>
+			
+				<?php foreach($produtos as $item) { ?>
+					
+					
 						<div class="product-wrapper">
 							<div class="product-image">
-								<a href="product.php"><img src="<?php echo $siteUrl;?>/img/products/<?php echo $i;?>.png" alt="Produto" /></a>
+								<a href="product.php"><img src="<?php echo $siteUrl;?>/images/<?php echo $item->imagem_produto;?>" alt="Produto" /></a>
 							</div>
 							<dl class="product-data">
-								<dt>2006 Fifa World Cup</dt>
-								<dd>Ano de Copa, e nada melhor do que acessar o site oficial do campeonato como aperitivo.</dd>
+								<dt><?php echo $item->cod_produto; ?></dt>
+								<dd><?php echo $item->desc_produto; ?></dd>
 							</dl>
 							<div class="product-actions">
 								<a href="<?php echo $siteUrl;?>/product.php" class="default-button">+ detalhes</a>
 								<a href="<?php echo $siteUrl;?>/product.php" class="default-button">FazerPedido</a>
 							</div>
 						</div>
-					<?php } ?>
+					
 				<?php } ?>
 
 			</div>
