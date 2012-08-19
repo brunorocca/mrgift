@@ -9,7 +9,7 @@
 		<div class="wrapper">
 
 			<div id="page-title">
-				<h1>Mesa</h1>
+				<h1><?php echo $categoria->nome_tipo_produto; ?></h1>
 			</div>
 
 		</div>
@@ -24,24 +24,34 @@
 	<div id="products-content-wrapper">
 
 		<ul id="products-breadcrumb" class="h-menu">
-			<li><a href="<?php echo $siteUrl;?>/products.php">Categoria</a>></li>
-			<li><a href="<?php echo $siteUrl;?>/products.php">Sub-categoria</a>></li>
-			<li><strong>Sub-categoria 2</strong></li>
+			<li><a href="<?php echo $siteUrlBase;?>/catalogo/categoria/<?php echo $categoria->id_tipo_produto;?>">
+				<?php echo $categoria->nome_tipo_produto; ?>
+			<?php if(isset($subCategoria)) { ?>
+				</a>></li>
+				<li><strong><?php echo $subCategoria->nome_sub_tipo_produto; ?></strong></li>
+			<?php } ?>
 		</ul>
 
 		<div id="products-list-wrapper">
 
-			<div id="products-list-pagination">
-				<span>Página:</span>
-				<ul class="h-menu">
-					<li><a href="<?php echo $siteUrl;?>/products.php">1</a></li>
-					<li><a href="<?php echo $siteUrl;?>/products.php">2</a></li>
-					<li><a href="<?php echo $siteUrl;?>/products.php"><strong>3</strong></a></li>
-					<li><a href="<?php echo $siteUrl;?>/products.php">4</a></li>
-					<li><a href="<?php echo $siteUrl;?>/products.php">5</a></li>
-					<li><a href="<?php echo $siteUrl;?>/products.php">6</a></li>
-				</ul>
-			</div>
+			<?php if($produtos) { ?>
+		
+				<div id="products-list-pagination">
+					<span>Página:</span>
+					<ul class="h-menu">
+						<li><a href="<?php echo $siteUrl;?>/products.php">1</a></li>
+						<li><a href="<?php echo $siteUrl;?>/products.php">2</a></li>
+						<li><a href="<?php echo $siteUrl;?>/products.php"><strong>3</strong></a></li>
+						<li><a href="<?php echo $siteUrl;?>/products.php">4</a></li>
+						<li><a href="<?php echo $siteUrl;?>/products.php">5</a></li>
+						<li><a href="<?php echo $siteUrl;?>/products.php">6</a></li>
+					</ul>
+				</div>
+			<?php } else {
+				
+				echo "Nenhum produto encontrado";
+				
+			}?>	
 
 			<div id="products-list">
 			

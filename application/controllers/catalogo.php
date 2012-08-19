@@ -9,7 +9,15 @@ class Catalogo extends CI_Controller {
 		$return['query'] = $this->Produto_model->get_by_type($tipoProduto);
 
 		$data['produtos'] = $return['query'];
-		$data['categoryId'] = $tipoProduto;
+		$categoria = $this->Produto_model->get_categoria_by_id($tipoProduto);
+		$data['categoria'] = $categoria[0];
+		
+		$this->load->library('pagination');
+		
+		$this->pagination->initialize($config);
+		
+		echo $this->pagination->create_links();
+		
 		
 		$this->load->view('products', $data);
 
@@ -21,9 +29,13 @@ class Catalogo extends CI_Controller {
 		$this->load->model('Produto_model');
 		$data['query'] = $this->Produto_model->get_by_sub_type($tipoSubProduto);
 	
-		$data['produtos'] = $return['query'];
-		$data['categoryId'] = 1;
-	
+		$data['produtos'] = $data['query'];
+		$categoria = $this->Produto_model->get_categoria_by_sub_tipo($tipoSubProduto);
+		$data['categoria'] = $categoria[0];
+		
+		$subCategoria = $this->Produto_model->get_sub_categoria_by_id($tipoSubProduto);
+		$data['subCategoria'] = $subCategoria[0];
+		
 		$this->load->view('products', $data);
 	
 	}
@@ -33,7 +45,21 @@ class Catalogo extends CI_Controller {
 		$this->load->model('Produto_model');
 		$return['query'] = $this->Produto_model->get_by_id($idProduto);
 
-		$data['item'] = $return['query'][0];
+		$item = $return['query'][0];
+		
+		$data['item'] = $item;
+		
+		// Pega os dados da Categoria
+		$categoria = $this->Produto_model->get_categoria_by_sub_tipo($item->id_sub_tipo_produto);
+		$data['categoria'] = $categoria[0];
+		
+		// Pega os dados da Subcategoria
+		$subCategoria = $this->Produto_model->get_sub_categoria_by_id($item->id_sub_tipo_produto);
+		$data['subCategoria'] = $subCategoria[0];
+		
+		// Pega as sugestoes
+		$sugestions = $this->Produto_model->get_sugestions($item->id_sub_tipo_produto);
+		$data['sugestions'] = $sugestions;
 		
 		$this->load->view('product', $data);
 

@@ -43,6 +43,18 @@ class Produto_model extends CI_Model {
 		return $query->result();
 	}
 	
+	function get_categoria_by_sub_tipo($id_sub_tipo_produto)
+	{
+		$this->db->select('*');
+		$this->db->from('TIPO_PRODUTO');
+		$this->db->join('SUB_TIPO_PRODUTO', 'SUB_TIPO_PRODUTO.id_tipo_produto = TIPO_PRODUTO.id_tipo_produto');
+		$this->db->where('SUB_TIPO_PRODUTO.id_sub_tipo_produto', $id_sub_tipo_produto);
+	
+		$query = $this->db->get();
+	
+		return $query->result();
+	}
+	
 	function get_by_sub_type($id_sub_tipo_produto)
 	{
 		$query = $this->db->get_where('PRODUTOS',
@@ -51,14 +63,30 @@ class Produto_model extends CI_Model {
 		return $query->result();
 	}
 	
-	function get_sugesions($id_tipo_produto)
+	function get_sugestions($id_sub_tipo_produto)
 	{
 		$query = $this->db->get_where('PRODUTOS',
-				array('id_sub_tipo_produto' => $id_tipo_produto));
+				array('id_sub_tipo_produto' => $id_sub_tipo_produto));
 	
-		// TODO RANDON 4 PRODUTOS
+		// Escolhe Produtos Aleatorios
 		
-		return $query->result();
+		$result = $query->result();
+		
+		$produtos = $result;
+		
+		if (count($produtos) > 4 ) {
+			for ($i = 0; $i < 4; $i++) {
+				$randomico = rand(0, count($produtos));
+				$produto = $result[$randomico];
+					
+				$sugestions[] = $produto;
+					
+			}
+			return $sugestions;
+		} else {
+			$produtos;
+		}
+		
 	}
 	
 	function get_by_id($id_produto)
@@ -68,6 +96,23 @@ class Produto_model extends CI_Model {
 	
 		return $query->result();
 	}
+	
+	function get_sub_categoria_by_id($id_sub_tipo_produto)
+	{
+		$query = $this->db->get_where('SUB_TIPO_PRODUTO',
+				array('id_sub_tipo_produto' => $id_sub_tipo_produto));
+	
+		return $query->result();
+	}
+	
+	function get_categoria_by_id($id_tipo_produto)
+	{
+		$query = $this->db->get_where('TIPO_PRODUTO',
+				array('id_tipo_produto' => $id_tipo_produto));
+	
+		return $query->result();
+	}
+	
 
 }
 

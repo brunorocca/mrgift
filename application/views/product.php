@@ -10,10 +10,15 @@
 	<div id="products-content-wrapper">
 
 		<ul id="products-breadcrumb" class="h-menu">
-			<li><a href="products.php">Categoria</a>></li>
-			<li><a href="products.php">Sub-categoria</a>></li>
-			<li><a href="products.php">Sub-categoria 2</a>></li>
-			<li><strong>Produto</strong></li>
+			<li><a href="<?php echo $siteUrlBase;?>/catalogo/categoria/<?php echo $categoria->id_tipo_produto;?>">
+			<?php echo $categoria->nome_tipo_produto; ?>
+			</a>></li>
+			
+			<li><a href="<?php echo $siteUrlBase;?>/catalogo/subcategoria/<?php echo $subCategoria->id_sub_tipo_produto;?>">
+			<?php echo $subCategoria->nome_sub_tipo_produto; ?>
+			</a>></li>
+			
+			<li><strong><?php echo $item->cod_produto; ?></strong></li>
 		</ul>
 
 		<div id="product-wrapper">
@@ -49,6 +54,8 @@
 			</div>
 
 		</div>
+		
+		<?php if ($sugestions)  {?>
 
 		<div id="products-list-wrapper">
 
@@ -56,17 +63,19 @@
 
 			<div id="products-list">
 
-				<?php for ($i=1;$i<5;$i++) { ?>
+				<?php foreach($sugestions as $itemSug) { ?>
 					<div class="product-wrapper">
 						<div class="product-image">
-							<a href="product.php"><img width="" src="<?php echo $siteUrl;?>/img/products/<?php echo $i;?>.png" alt="Produto" /></a>
+								<a href="<?php echo $siteUrlBase;?>/catalogo/detalhe/<?php echo $itemSug->id_produto;?>">
+									<img src="<?php echo $siteUrl;?>/images/<?php echo $itemSug->imagem_produto;?>" alt="Produto" />
+								</a>
 						</div>
 						<dl class="product-data">
-							<dt>2006 Fifa World Cup</dt>
-							<dd>Ano de Copa, e nada melhor do que acessar o site oficial do campeonato como aperitivo.</dd>
+							<dt><?php echo $itemSug->cod_produto; ?></dt>
+							<dd><?php echo $itemSug->desc_produto; ?></dd>
 						</dl>
 						<div class="product-actions">
-							<a href="<?php echo $siteUrl;?>/product.php" class="default-button">+ detalhes</a>
+							<a href="<?php echo $siteUrlBase;?>/catalogo/detalhe/<?php echo $itemSug->id_produto;?>" class="default-button">+ detalhes</a>
 							<a href="<?php echo $siteUrl;?>/product.php" class="default-button">FazerPedido</a>
 						</div>
 					</div>
@@ -75,6 +84,8 @@
 			</div>
 
 		</div>
+		
+		<?php } ?>
 
 	</div>
 
